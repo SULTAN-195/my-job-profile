@@ -1,31 +1,28 @@
-import { BookOpen, Hammer, Send, TrendingUp } from "lucide-react";
 import { Section } from "./Section";
 
 const items = [
-  { n: "01", icon: BookOpen, title: "LEARNING", body: "Certified Agentic AI Architect — building intelligent agents, RAG pipelines, and LLM-powered applications." },
-  { n: "02", icon: Hammer, title: "BUILDING", body: "Adding production-quality full-stack and AI projects to portfolio — focusing on clean architecture and real impact." },
-  { n: "03", icon: Send, title: "APPLYING", body: "Actively applying for internship and developer roles in Karachi and remotely worldwide." },
-  { n: "04", icon: TrendingUp, title: "GROWING", body: "Sharpening DSA fundamentals, JavaScript core concepts, and system design basics every day." },
+  { n: "01", title: "Learning", body: "Certified Agentic AI Architect — building intelligent agents, RAG pipelines, and LLM-powered applications." },
+  { n: "02", title: "Building", body: "Adding production-quality full-stack and AI projects to my portfolio — clean architecture, real impact." },
+  { n: "03", title: "Applying", body: "Actively applying for internship and junior developer roles in Karachi and remotely worldwide." },
+  { n: "04", title: "Growing", body: "Sharpening DSA fundamentals, JavaScript core concepts, and system-design basics every day." },
 ];
 
 export function Now() {
   return (
-    <Section id="now" label="What I'm Doing Right Now" heading="Current Focus">
-      <div className="grid sm:grid-cols-2 gap-5">
-        {items.map(({ n, icon: Icon, title, body }) => (
+    <Section id="now" label="Now / 05" heading="What I'm doing right now.">
+      <div className="grid sm:grid-cols-2 border-t border-l border-hairline">
+        {items.map((it) => (
           <div
-            key={n}
-            className="group relative glass glow-hover rounded-2xl p-7 overflow-hidden"
+            key={it.n}
+            className="border-r border-b border-hairline p-8 sm:p-10 hover:bg-[rgba(232,255,71,0.04)] transition-colors"
           >
-            <div className="absolute -top-10 -right-10 h-40 w-40 rounded-full bg-primary/10 blur-3xl group-hover:bg-violet/20 transition-colors" />
-            <div className="relative flex items-start gap-4">
-              <span className="text-5xl font-extrabold gradient-text font-mono leading-none">{n}</span>
+            <div className="flex items-baseline gap-6">
+              <span className="font-serif text-5xl sm:text-6xl accent leading-none">{it.n}</span>
               <div className="flex-1">
-                <div className="flex items-center gap-2">
-                  <Icon size={16} className="text-primary" />
-                  <h3 className="font-extrabold tracking-wider text-sm">{title}</h3>
-                </div>
-                <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{body}</p>
+                <h3 className="font-mono text-xs uppercase tracking-[0.2em]">{it.title}</h3>
+                <p className="mt-3 font-serif text-xl leading-snug text-foreground/85">
+                  {it.body}
+                </p>
               </div>
             </div>
           </div>

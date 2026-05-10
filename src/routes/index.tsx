@@ -8,6 +8,7 @@ import { Certifications } from "@/components/portfolio/Certifications";
 import { Now } from "@/components/portfolio/Now";
 import { Contact } from "@/components/portfolio/Contact";
 import { Footer } from "@/components/portfolio/Footer";
+import { Cursor } from "@/components/portfolio/Cursor";
 
 export const Route = createFileRoute("/")({
   head: () => ({

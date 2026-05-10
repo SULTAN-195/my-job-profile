@@ -1,61 +1,57 @@
 import headshot from "@/assets/anas-headshot.jpg";
 import { Section } from "./Section";
 
-const highlights = [
-  { icon: "🎯", label: "Goal-Oriented" },
-  { icon: "💡", label: "Quick Learner" },
-  { icon: "🤝", label: "Team Player" },
-  { icon: "🔨", label: "Builder" },
-];
-
 const ticker = [
   "React.js", "Node.js", "MongoDB", "React Native",
-  "Next.js", "PostgreSQL", "Agentic AI", "Cisco Certified",
+  "Next.js", "PostgreSQL", "Agentic AI", "TypeScript", "Cisco Certified",
+];
+
+const traits = [
+  ["01", "Goal-Oriented"],
+  ["02", "Quick Learner"],
+  ["03", "Team Player"],
+  ["04", "Builder"],
 ];
 
 export function About() {
   return (
     <>
-      <Section id="about" label="About Me" heading="Passionate Developer. Lifelong Learner.">
-        <div className="grid lg:grid-cols-[340px_1fr] gap-12 items-center">
-          <div className="flex justify-center lg:justify-start">
-            <div className="relative h-72 w-72">
-              <div className="absolute inset-0 rounded-full ring-spin"
-                   style={{
-                     background: "conic-gradient(from 0deg, #6366f1, #8b5cf6, #06b6d4, #6366f1)",
-                     padding: "3px",
-                     WebkitMask: "linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0)",
-                     WebkitMaskComposite: "xor",
-                     maskComposite: "exclude",
-                   }} />
-              <div className="absolute inset-2 rounded-full bg-primary/20 blur-2xl" />
+      <Section id="about" label="About / 01" heading="Passionate developer. Lifelong learner.">
+        <div className="grid lg:grid-cols-[380px_1fr] gap-12 lg:gap-20">
+          <div>
+            <div className="aspect-[4/5] border border-hairline overflow-hidden">
               <img
                 src={headshot}
                 alt="Syed Muhammad Anas"
-                width={320}
-                height={320}
                 loading="lazy"
-                className="relative h-full w-full rounded-full object-cover"
+                className="h-full w-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
               />
             </div>
+            <div className="mt-4 label-mono flex justify-between">
+              <span>Anas, 2026</span>
+              <span>Karachi, PK</span>
+            </div>
           </div>
-          <div>
-            <p className="text-muted-foreground leading-[1.85] text-base sm:text-lg">
-              I'm Anas, a Full Stack Developer. I recently completed an intensive Full Stack
-              Web & Mobile Application Development course and I'm currently learning Certified
-              Agentic AI Architect. I love building real-world applications that solve actual
-              problems. I'm actively looking for my first professional opportunity where I can
-              contribute, learn from experienced developers, and grow into a senior role over time.
+
+          <div className="border-t border-hairline pt-8 lg:border-t-0 lg:pt-0">
+            <p className="font-serif text-2xl sm:text-3xl leading-[1.4]">
+              I recently completed an intensive Full Stack Web & Mobile Application Development
+              course and I'm currently learning <span className="italic accent">Certified Agentic AI Architect</span>.
+            </p>
+            <p className="mt-8 text-foreground/70 leading-[1.85] max-w-xl">
+              I love building real-world applications that solve actual problems. I'm actively
+              looking for my first professional opportunity where I can contribute, learn from
+              experienced developers, and grow into a senior role over time.
             </p>
 
-            <div className="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-3">
-              {highlights.map((h) => (
+            <div className="mt-12 grid grid-cols-2 sm:grid-cols-4 border-t border-hairline">
+              {traits.map(([n, t], i) => (
                 <div
-                  key={h.label}
-                  className="glass glow-hover rounded-xl p-4 text-center"
+                  key={n}
+                  className={`py-6 ${i !== 0 ? "border-l border-hairline" : ""}`}
                 >
-                  <div className="text-2xl">{h.icon}</div>
-                  <div className="mt-2 text-sm font-semibold">{h.label}</div>
+                  <div className="label-mono">[{n}]</div>
+                  <div className="mt-2 font-serif text-xl">{t}</div>
                 </div>
               ))}
             </div>
@@ -63,13 +59,13 @@ export function About() {
         </div>
       </Section>
 
-      {/* Marquee ticker */}
-      <div className="relative overflow-hidden border-y border-primary/20 bg-surface py-5">
-        <div className="flex marquee-track whitespace-nowrap gap-10 text-lg font-bold">
+      {/* Marquee */}
+      <div className="relative overflow-hidden border-y border-hairline py-8">
+        <div className="flex marquee-track whitespace-nowrap gap-12 font-serif text-4xl sm:text-5xl">
           {[...ticker, ...ticker].map((t, i) => (
-            <span key={i} className="flex items-center gap-10 text-foreground/80">
+            <span key={i} className="flex items-center gap-12 text-foreground/90">
               {t}
-              <span className="text-primary">✦</span>
+              <span className="accent text-3xl">✦</span>
             </span>
           ))}
         </div>
