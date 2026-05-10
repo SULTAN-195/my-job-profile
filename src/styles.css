@@ -114,7 +114,7 @@
   }
   .gradient-border {
     position: relative;
-    background: rgba(26, 26, 53, 0.5);
+    background: rgba(255, 255, 255, 0.7);
   }
   .gradient-border::before {
     content: "";
@@ -130,16 +130,16 @@
   }
 
   .glass {
-    background: rgba(26, 26, 53, 0.4);
+    background: rgba(255, 255, 255, 0.6);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(99, 102, 241, 0.2);
+    border: 1px solid rgba(99, 102, 241, 0.18);
   }
   .glass-strong {
-    background: rgba(13, 13, 31, 0.7);
+    background: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(99, 102, 241, 0.25);
+    border: 1px solid rgba(99, 102, 241, 0.22);
   }
   .glow-hover {
     transition: all 0.3s ease;
