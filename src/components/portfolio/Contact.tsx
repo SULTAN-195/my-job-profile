@@ -1,65 +1,77 @@
-import { Mail, Linkedin, Github, MessageCircle, MapPin, ArrowRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { Section } from "./Section";
 import { useState } from "react";
 
-const cards = [
-  { icon: Mail, label: "ali.hassan@email.com", href: "mailto:ali.hassan@email.com" },
-  { icon: Linkedin, label: "linkedin.com/in/alihassan", href: "https://linkedin.com/in/alihassan" },
-  { icon: Github, label: "github.com/alihassan", href: "https://github.com/alihassan" },
-  { icon: MessageCircle, label: "+92 300 0000000 (WhatsApp)", href: "https://wa.me/923000000000" },
-  { icon: MapPin, label: "Karachi, Pakistan", href: "#" },
+const links = [
+  { label: "Email", value: "ali.hassan@email.com", href: "mailto:ali.hassan@email.com" },
+  { label: "LinkedIn", value: "linkedin.com/in/alihassan", href: "https://linkedin.com/in/alihassan" },
+  { label: "GitHub", value: "github.com/alihassan", href: "https://github.com/alihassan" },
+  { label: "WhatsApp", value: "+92 300 0000000", href: "https://wa.me/923000000000" },
+  { label: "Location", value: "Karachi, Pakistan", href: "#" },
 ];
 
 export function Contact() {
   const [sent, setSent] = useState(false);
 
   return (
-    <Section id="contact" label="Get In Touch" heading="Let's Work Together">
-      <div className="absolute -z-10 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[500px] w-[500px] rounded-full bg-primary/15 blur-[120px] pointer-events-none" />
-      <p className="-mt-6 mb-10 max-w-2xl text-muted-foreground leading-relaxed">
-        I'm actively looking for internship and junior developer opportunities. Whether you have
-        a role, a project, or just want to connect — feel free to reach out!
-      </p>
-      <div className="grid lg:grid-cols-[1.2fr_1fr] gap-8">
-        <form
-          onSubmit={(e) => {
-            e.preventDefault();
-            setSent(true);
-          }}
-          className="glass-strong rounded-2xl p-6 sm:p-8 space-y-4"
-        >
-          <div className="grid sm:grid-cols-2 gap-4">
+    <Section id="contact" label="Contact / 06" heading="Let's work together.">
+      <div className="grid lg:grid-cols-2 gap-0 lg:divide-x divide-y lg:divide-y-0 divide-[var(--border)]">
+        <div className="lg:pr-12 pb-12 lg:pb-0">
+          <p className="font-serif text-3xl sm:text-4xl leading-[1.25]">
+            Open to <span className="italic accent">internship</span> and{" "}
+            <span className="italic">junior developer</span> opportunities. Have a role, project,
+            or just want to connect?
+          </p>
+
+          <ul className="mt-12 border-t border-hairline">
+            {links.map((l) => (
+              <li key={l.label} className="border-b border-hairline">
+                <a
+                  href={l.href}
+                  target={l.href.startsWith("http") ? "_blank" : undefined}
+                  rel="noreferrer"
+                  className="group flex items-center justify-between gap-4 py-5"
+                >
+                  <div className="flex items-baseline gap-6">
+                    <span className="label-mono w-20">{l.label}</span>
+                    <span className="font-serif text-xl sm:text-2xl group-hover:text-accent transition-colors break-all">
+                      {l.value}
+                    </span>
+                  </div>
+                  <ArrowUpRight
+                    size={22}
+                    className="hover-arrow shrink-0 group-hover:text-accent transition-colors"
+                  />
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="lg:pl-12 pt-12 lg:pt-0">
+          <div className="label-mono mb-6">[ Send a Message ]</div>
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              setSent(true);
+            }}
+            className="space-y-6"
+          >
             <Field label="Name" name="name" />
             <Field label="Email" name="email" type="email" />
-          </div>
-          <Field label="Subject" name="subject" />
-          <Field label="Message" name="message" textarea />
-          <button
-            type="submit"
-            className="btn-lift w-full inline-flex items-center justify-center gap-2 rounded-lg gradient-bg px-5 py-3.5 text-sm font-bold text-white shadow-[0_8px_24px_-8px_rgba(99,102,241,0.6)]"
-          >
-            Send Message <ArrowRight size={16} />
-          </button>
-          {sent && (
-            <p className="text-sm text-success text-center">Thanks — I'll get back to you soon.</p>
-          )}
-        </form>
-
-        <div className="space-y-3">
-          {cards.map(({ icon: Icon, label, href }) => (
-            <a
-              key={label}
-              href={href}
-              target={href.startsWith("http") ? "_blank" : undefined}
-              rel="noreferrer"
-              className="glass glow-hover flex items-center gap-4 rounded-xl p-4"
+            <Field label="Subject" name="subject" />
+            <Field label="Message" name="message" textarea />
+            <button
+              type="submit"
+              className="group inline-flex items-center gap-3 bg-accent-yellow px-6 py-4 text-xs font-mono uppercase tracking-[0.18em]"
             >
-              <div className="h-10 w-10 rounded-lg gradient-bg grid place-items-center shrink-0 shadow-[0_0_14px_rgba(99,102,241,0.4)]">
-                <Icon size={18} className="text-white" />
-              </div>
-              <span className="text-sm break-all text-foreground/90">{label}</span>
-            </a>
-          ))}
+              Send Message
+              <ArrowUpRight size={14} className="hover-arrow" />
+            </button>
+            {sent && (
+              <p className="label-mono accent">[ Sent — I'll get back to you soon. ]</p>
+            )}
+          </form>
         </div>
       </div>
     </Section>
@@ -78,16 +90,14 @@ function Field({
   textarea?: boolean;
 }) {
   const cls =
-    "w-full rounded-lg border border-primary/20 bg-background/60 backdrop-blur px-3.5 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary focus:shadow-[0_0_0_3px_rgba(99,102,241,0.25),0_0_20px_rgba(99,102,241,0.3)] transition-all";
+    "w-full bg-transparent border-0 border-b border-[var(--border)] py-3 text-base text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-accent transition-colors";
   return (
     <label className="block">
-      <span className="text-[11px] font-bold text-muted-foreground uppercase tracking-[0.2em]">
-        {label}
-      </span>
+      <span className="label-mono">{label}</span>
       {textarea ? (
-        <textarea name={name} required rows={5} className={`${cls} mt-2 resize-none`} />
+        <textarea name={name} required rows={4} className={`${cls} resize-none mt-1`} />
       ) : (
-        <input name={name} type={type} required className={`${cls} mt-2`} />
+        <input name={name} type={type} required className={`${cls} mt-1`} />
       )}
     </label>
   );

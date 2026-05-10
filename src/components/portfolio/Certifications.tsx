@@ -1,79 +1,76 @@
-import { BadgeCheck, Trophy, Loader2 } from "lucide-react";
 import { Section } from "./Section";
 
 const certs = [
-  { title: "Cisco Networking Academy — JavaScript Essentials", meta: "Verified Badge + Certificate + Completion Statement | 2024-2025", status: "verified" },
-  { title: "Cisco Networking Academy — HTML Essentials", meta: "Verified Badge + Certificate + Completion Statement | 2024-2025", status: "verified" },
-  { title: "Cisco Networking Academy — CSS Essentials", meta: "Verified Badge + Certificate + Completion Statement | 2024-2025", status: "verified" },
-  { title: "Full Stack Web & Mobile Application Development", meta: "[Institute Name], Karachi | 2023–2025", status: "verified" },
-  { title: "Certified Agentic AI Architect", meta: "In Progress", status: "progress" },
+  { n: "01", title: "JavaScript Essentials", org: "Cisco Networking Academy", meta: "2024 — 2025", status: "Verified" },
+  { n: "02", title: "HTML Essentials", org: "Cisco Networking Academy", meta: "2024 — 2025", status: "Verified" },
+  { n: "03", title: "CSS Essentials", org: "Cisco Networking Academy", meta: "2024 — 2025", status: "Verified" },
+  { n: "04", title: "Full Stack Web & Mobile App Development", org: "Institute, Karachi", meta: "2023 — 2025", status: "Verified" },
+  { n: "05", title: "Certified Agentic AI Architect", org: "Self-paced", meta: "2026", status: "In Progress" },
 ];
 
 export function Certifications() {
   return (
-    <Section id="certifications" label="Certifications & Courses" heading="Credentials">
-      <div className="relative pl-8 sm:pl-12">
-        {/* Vertical line */}
-        <div className="absolute left-2 sm:left-4 top-2 bottom-2 w-px bg-gradient-to-b from-primary via-violet to-cyan" />
-
-        <div className="space-y-5">
-          {certs.map((c) => (
-            <div key={c.title} className="relative">
-              {/* Dot */}
-              <span className="absolute -left-[26px] sm:-left-[34px] top-5 h-3 w-3 rounded-full gradient-bg shadow-[0_0_14px_rgba(99,102,241,0.7)] ring-4 ring-background" />
-              <div className="glass glow-hover rounded-xl p-5 flex items-start gap-4">
-                {c.status === "verified" ? (
-                  <BadgeCheck className="text-success shrink-0 mt-0.5" size={22} />
-                ) : (
-                  <Loader2 className="text-amber-400 shrink-0 mt-0.5 animate-spin" size={22} />
+    <Section id="certifications" label="Credentials / 04" heading="Earned & in progress.">
+      <ul className="border-t border-hairline">
+        {certs.map((c) => (
+          <li
+            key={c.n}
+            className="border-b border-hairline grid grid-cols-[60px_1fr_auto] sm:grid-cols-[80px_1fr_220px_140px] gap-6 items-baseline py-8"
+          >
+            <span className="font-mono text-xs accent">[{c.n}]</span>
+            <div>
+              <h3 className="font-serif text-2xl sm:text-3xl leading-tight">{c.title}</h3>
+              <p className="mt-1 label-mono">{c.org}</p>
+            </div>
+            <div className="hidden sm:block label-mono">{c.meta}</div>
+            <div>
+              <span
+                className={`inline-flex items-center gap-2 border px-2.5 py-1 text-[10px] font-mono uppercase tracking-wider ${
+                  c.status === "Verified"
+                    ? "border-hairline text-foreground/70"
+                    : "border-accent accent"
+                }`}
+              >
+                {c.status === "In Progress" && (
+                  <span className="h-1.5 w-1.5 rounded-full bg-accent pulse-dot" />
                 )}
-                <div className="flex-1">
-                  <h3 className="font-bold leading-snug">{c.title}</h3>
-                  <p className="mt-1 text-sm text-muted-foreground">{c.meta}</p>
-                </div>
-                {c.status === "progress" && (
-                  <span className="inline-flex items-center gap-1.5 rounded-full bg-amber-500/15 border border-amber-400/30 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-amber-400">
-                    <span className="h-1.5 w-1.5 rounded-full bg-amber-400 pulse-dot" />
-                    In Progress
-                  </span>
-                )}
-              </div>
+                {c.status}
+              </span>
             </div>
-          ))}
-        </div>
-      </div>
+          </li>
+        ))}
+      </ul>
 
-      <div className="mt-16">
-        <h3 className="text-xs font-semibold uppercase tracking-[0.25em] text-primary mb-5 flex items-center gap-2">
-          <span className="h-1.5 w-1.5 rounded-full bg-amber-400 pulse-dot" />
-          Hackathons & Competitions
-        </h3>
-        <div
-          className="relative rounded-2xl p-6 sm:p-8 glass-strong overflow-hidden"
-          style={{ background: "linear-gradient(135deg, rgba(245,158,11,0.06), rgba(26,26,53,0.5))" }}
-        >
-          <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-amber-400 to-orange-500" />
-          <div className="flex items-start gap-5">
-            <div className="h-14 w-14 rounded-xl bg-amber-500/15 text-amber-400 flex items-center justify-center shrink-0 shadow-[0_0_24px_rgba(245,158,11,0.3)]">
-              <Trophy size={26} />
+      {/* Hackathon */}
+      <div className="mt-20">
+        <div className="label-mono mb-6">[ Hackathons & Competitions ]</div>
+        <div className="border border-hairline p-8 sm:p-12">
+          <div className="grid sm:grid-cols-[1fr_auto] gap-6 items-end">
+            <div>
+              <h4 className="font-serif text-3xl sm:text-4xl leading-tight">
+                <span className="italic">[Hackathon Name]</span> — [Organizer]
+              </h4>
+              <p className="mt-2 label-mono">[Date] · Karachi</p>
             </div>
-            <div className="flex-1">
-              <h4 className="font-extrabold text-xl">[Hackathon Name] | [Organizer]</h4>
-              <p className="text-sm text-muted-foreground mt-1">[Date] | Karachi</p>
-              <div className="mt-4 grid sm:grid-cols-4 gap-3 text-sm">
-                {[
-                  { k: "Team Size", v: "[N]" },
-                  { k: "Duration", v: "[Hours]" },
-                  { k: "Tech Used", v: "[Tech]" },
-                  { k: "Result", v: "Participant" },
-                ].map((s) => (
-                  <div key={s.k} className="glass rounded-lg p-3">
-                    <div className="text-[10px] uppercase tracking-wider text-muted-foreground">{s.k}</div>
-                    <div className="mt-1 font-semibold">{s.v}</div>
-                  </div>
-                ))}
+            <span className="border border-accent accent px-3 py-1 text-[10px] font-mono uppercase tracking-wider">
+              Participant
+            </span>
+          </div>
+          <div className="mt-10 grid grid-cols-2 sm:grid-cols-4 border-t border-hairline">
+            {[
+              { k: "Team Size", v: "[N]" },
+              { k: "Duration", v: "[Hours]" },
+              { k: "Tech Used", v: "[Stack]" },
+              { k: "Result", v: "Participant" },
+            ].map((s, i) => (
+              <div
+                key={s.k}
+                className={`py-6 px-4 ${i !== 0 ? "border-l border-hairline" : ""}`}
+              >
+                <div className="label-mono">{s.k}</div>
+                <div className="mt-2 font-serif text-xl">{s.v}</div>
               </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>
