@@ -10,7 +10,7 @@ export function Hero() {
         <div className="grid lg:grid-cols-2 gap-0 lg:divide-x divide-y lg:divide-y-0 divide-[var(--border)]">
           <div className="lg:pr-12 pb-12 lg:pb-0">
             <div className="label-mono mb-8">[ Portfolio / 2026 ]</div>
-            <h1 className="font-serif text-6xl sm:text-7xl lg:text-[8rem] leading-[0.9] tracking-tight">
+            <h1 className="font-serif text-6xl sm:text-7xl lg:text-[7.5rem] leading-[0.9] tracking-tight">
               Syed <br />
               Muhammad <br />
               <span className="italic">Anas<span className="accent">.</span></span>
@@ -23,15 +23,13 @@ export function Hero() {
             </div>
           </div>
 
-          <div className="lg:pl-12 pt-12 lg:pt-0 flex flex-col justify-between min-h-[420px]">
-            <div>
-              <div className="label-mono mb-6">[ 001 / Intro ]</div>
-              <p className="font-serif text-2xl sm:text-3xl leading-[1.3] text-foreground/90">
-                A <span className="accent italic">Full Stack Developer</span> based in Karachi —
-                building clean, scalable web and mobile applications, and currently advancing into
-                <span className="italic"> Agentic AI Engineering</span>.
-              </p>
-            </div>
+          <div className="lg:pl-12 pt-12 lg:pt-0 flex flex-col">
+            <div className="label-mono mb-6">[ 001 / Intro ]</div>
+            <p className="font-serif text-2xl sm:text-3xl leading-[1.3] text-foreground/90">
+              A <span className="accent italic">Full Stack Developer</span> based in Karachi —
+              building clean, scalable web and mobile applications, and currently advancing into
+              <span className="italic"> Agentic AI Engineering</span>.
+            </p>
 
             <div className="mt-12">
               <div className="label-mono mb-4">[ 002 / Get in Touch ]</div>
@@ -65,8 +63,10 @@ export function Hero() {
           ].map((s, i) => (
             <div
               key={s.l}
-              className={`py-8 px-4 ${i !== 0 ? "border-l border-hairline" : ""} ${
-                i < 2 ? "sm:border-l" : ""
+              className={`py-8 px-4 border-hairline ${
+                i % 2 !== 0 ? "border-l" : ""
+              } ${i >= 2 ? "border-t sm:border-t-0" : ""} ${
+                i === 2 ? "sm:border-l" : ""
               }`}
             >
               <div className="font-serif text-5xl sm:text-6xl leading-none">{s.v}</div>

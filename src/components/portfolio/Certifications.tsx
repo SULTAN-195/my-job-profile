@@ -15,7 +15,7 @@ export function Certifications() {
         {certs.map((c) => (
           <li
             key={c.n}
-            className="border-b border-hairline grid grid-cols-[60px_1fr_auto] sm:grid-cols-[80px_1fr_220px_140px] gap-6 items-baseline py-8"
+            className="border-b border-hairline grid grid-cols-[40px_1fr_auto] sm:grid-cols-[160px_1fr_180px_120px] gap-4 sm:gap-12 items-baseline py-8"
           >
             <span className="font-mono text-xs accent">[{c.n}]</span>
             <div>
