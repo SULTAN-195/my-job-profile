@@ -25,21 +25,22 @@ export function Navbar() {
     <header
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "backdrop-blur-md bg-background/80 border-b border-border"
+          ? "backdrop-blur-2xl bg-background/60 border-b border-primary/20 shadow-[0_4px_30px_rgba(99,102,241,0.15)]"
           : "bg-transparent"
       }`}
     >
       <nav className="max-w-7xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between">
-        <a href="#home" className="text-xl font-bold tracking-tight text-foreground">
-          Anas<span className="text-primary">.</span>
+        <a href="#home" className="flex items-center gap-1.5 text-xl font-extrabold tracking-tight">
+          <span className="gradient-text">A.H</span>
+          <span className="h-2 w-2 rounded-full bg-primary shadow-[0_0_12px_#6366f1] pulse-dot" />
         </a>
 
-        <ul className="hidden md:flex items-center gap-7">
+        <ul className="hidden md:flex items-center gap-8">
           {links.map((l) => (
             <li key={l.href}>
               <a
                 href={l.href}
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                className="underline-anim text-sm text-muted-foreground hover:text-foreground transition-colors"
               >
                 {l.label}
               </a>
@@ -48,13 +49,13 @@ export function Navbar() {
         </ul>
 
         <div className="flex items-center gap-3">
-          <span className="hidden sm:inline-flex items-center gap-2 rounded-full border border-success/30 bg-success/10 px-3 py-1 text-xs font-medium text-success">
-            <span className="w-2 h-2 rounded-full bg-success pulse-dot" />
+          <span className="hidden sm:inline-flex items-center gap-2 rounded-full glass px-3 py-1.5 text-xs font-medium text-success">
+            <span className="w-2 h-2 rounded-full bg-success pulse-dot shadow-[0_0_10px_#10b981]" />
             Open to Work
           </span>
           <button
             onClick={() => setOpen((v) => !v)}
-            className="md:hidden p-2 rounded-md hover:bg-card text-foreground"
+            className="md:hidden p-2 rounded-md glass text-foreground"
             aria-label="Menu"
           >
             {open ? <X size={20} /> : <Menu size={20} />}
@@ -63,14 +64,18 @@ export function Navbar() {
       </nav>
 
       {open && (
-        <div className="md:hidden bg-surface border-t border-border">
-          <ul className="flex flex-col px-5 py-4 gap-1">
-            {links.map((l) => (
-              <li key={l.href}>
+        <div className="md:hidden fixed inset-0 top-16 glass-strong">
+          <ul className="flex flex-col px-6 py-8 gap-2">
+            {links.map((l, i) => (
+              <li
+                key={l.href}
+                style={{ animationDelay: `${i * 60}ms` }}
+                className="animate-in fade-in slide-in-from-right-4 duration-500"
+              >
                 <a
                   onClick={() => setOpen(false)}
                   href={l.href}
-                  className="block py-2 text-sm text-muted-foreground hover:text-foreground"
+                  className="block py-3 text-lg font-semibold text-foreground/90 hover:gradient-text transition-all"
                 >
                   {l.label}
                 </a>

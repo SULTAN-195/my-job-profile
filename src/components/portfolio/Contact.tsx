@@ -1,4 +1,4 @@
-import { Mail, Linkedin, Github, MessageCircle, MapPin, Send } from "lucide-react";
+import { Mail, Linkedin, Github, MessageCircle, MapPin, ArrowRight } from "lucide-react";
 import { Section } from "./Section";
 import { useState } from "react";
 
@@ -15,7 +15,8 @@ export function Contact() {
 
   return (
     <Section id="contact" label="Get In Touch" heading="Let's Work Together">
-      <p className="-mt-6 mb-10 max-w-2xl text-muted-foreground">
+      <div className="absolute -z-10 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[500px] w-[500px] rounded-full bg-primary/15 blur-[120px] pointer-events-none" />
+      <p className="-mt-6 mb-10 max-w-2xl text-muted-foreground leading-relaxed">
         I'm actively looking for internship and junior developer opportunities. Whether you have
         a role, a project, or just want to connect — feel free to reach out!
       </p>
@@ -25,7 +26,7 @@ export function Contact() {
             e.preventDefault();
             setSent(true);
           }}
-          className="rounded-xl border border-border bg-card/60 p-6 sm:p-8 shadow-card space-y-4"
+          className="glass-strong rounded-2xl p-6 sm:p-8 space-y-4"
         >
           <div className="grid sm:grid-cols-2 gap-4">
             <Field label="Name" name="name" />
@@ -35,12 +36,12 @@ export function Contact() {
           <Field label="Message" name="message" textarea />
           <button
             type="submit"
-            className="inline-flex items-center gap-2 rounded-md bg-primary px-5 py-3 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
+            className="btn-lift w-full inline-flex items-center justify-center gap-2 rounded-lg gradient-bg px-5 py-3.5 text-sm font-bold text-white shadow-[0_8px_24px_-8px_rgba(99,102,241,0.6)]"
           >
-            <Send size={16} /> Send Message
+            Send Message <ArrowRight size={16} />
           </button>
           {sent && (
-            <p className="text-sm text-success">Thanks — I'll get back to you soon.</p>
+            <p className="text-sm text-success text-center">Thanks — I'll get back to you soon.</p>
           )}
         </form>
 
@@ -51,12 +52,12 @@ export function Contact() {
               href={href}
               target={href.startsWith("http") ? "_blank" : undefined}
               rel="noreferrer"
-              className="flex items-center gap-4 rounded-xl border border-border bg-card/60 p-4 shadow-card hover:border-primary/50 hover:text-accent-soft transition-colors"
+              className="glass glow-hover flex items-center gap-4 rounded-xl p-4"
             >
-              <div className="h-10 w-10 rounded-lg bg-primary/15 text-primary flex items-center justify-center shrink-0">
-                <Icon size={18} />
+              <div className="h-10 w-10 rounded-lg gradient-bg grid place-items-center shrink-0 shadow-[0_0_14px_rgba(99,102,241,0.4)]">
+                <Icon size={18} className="text-white" />
               </div>
-              <span className="text-sm break-all">{label}</span>
+              <span className="text-sm break-all text-foreground/90">{label}</span>
             </a>
           ))}
         </div>
@@ -77,16 +78,16 @@ function Field({
   textarea?: boolean;
 }) {
   const cls =
-    "w-full rounded-md border border-border bg-surface px-3 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors";
+    "w-full rounded-lg border border-primary/20 bg-background/60 backdrop-blur px-3.5 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary focus:shadow-[0_0_0_3px_rgba(99,102,241,0.25),0_0_20px_rgba(99,102,241,0.3)] transition-all";
   return (
     <label className="block">
-      <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
+      <span className="text-[11px] font-bold text-muted-foreground uppercase tracking-[0.2em]">
         {label}
       </span>
       {textarea ? (
-        <textarea name={name} required rows={5} className={`${cls} mt-1.5 resize-none`} />
+        <textarea name={name} required rows={5} className={`${cls} mt-2 resize-none`} />
       ) : (
-        <input name={name} type={type} required className={`${cls} mt-1.5`} />
+        <input name={name} type={type} required className={`${cls} mt-2`} />
       )}
     </label>
   );
