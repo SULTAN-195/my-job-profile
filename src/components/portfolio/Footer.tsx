@@ -40,7 +40,7 @@ export function Footer() {
         <div className="max-w-7xl mx-auto px-6 sm:px-10 py-3 flex items-center justify-center gap-3 text-[11px] sm:text-xs font-mono uppercase tracking-[0.2em]">
           <span className="h-2 w-2 rounded-full bg-accent pulse-dot" />
           <span className="accent">Open to Work</span>
-          <span className="text-foreground/60">— Available for Internship & Junior Roles</span>
+          <span className="text-foreground/80">— Available for Internship & Junior Roles</span>
         </div>
       </div>
     </>
