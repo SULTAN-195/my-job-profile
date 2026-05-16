@@ -32,9 +32,9 @@ export function Contact() {
                   rel="noreferrer"
                   className="group flex items-center justify-between gap-4 py-5"
                 >
-                  <div className="flex items-baseline gap-6">
-                    <span className="label-mono w-20">{l.label}</span>
-                    <span className="font-serif text-xl sm:text-2xl group-hover:text-accent transition-colors break-all">
+                  <div className="flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-6 min-w-0 flex-1">
+                    <span className="label-mono sm:w-24 shrink-0">{l.label}</span>
+                    <span className="font-serif text-xl sm:text-2xl group-hover:text-accent transition-colors break-all min-w-0">
                       {l.value}
                     </span>
                   </div>

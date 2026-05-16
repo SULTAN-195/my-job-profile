@@ -60,10 +60,10 @@ export function About() {
       </Section>
 
       {/* Marquee */}
-      <div className="relative overflow-hidden border-y border-hairline py-8">
-        <div className="flex marquee-track whitespace-nowrap gap-12 font-serif text-4xl sm:text-5xl">
+      <div className="relative overflow-hidden border-y border-hairline py-8 w-full">
+        <div className="flex marquee-track whitespace-nowrap gap-12 font-serif text-4xl sm:text-5xl w-max">
           {[...ticker, ...ticker].map((t, i) => (
-            <span key={i} className="flex items-center gap-12 text-foreground/90">
+            <span key={i} className="flex items-center gap-12 text-foreground/90 shrink-0">
               {t}
               <span className="accent text-3xl">✦</span>
             </span>
