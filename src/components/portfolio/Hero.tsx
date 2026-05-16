@@ -54,20 +54,16 @@ export function Hero() {
         </div>
 
         {/* Stats strip */}
-        <div className="mt-16 lg:mt-24 grid grid-cols-2 sm:grid-cols-4 border-t border-hairline">
+        <div className="mt-16 lg:mt-24 grid grid-cols-2 sm:grid-cols-4 border-t border-l border-hairline">
           {[
             { v: "3+", l: "Projects" },
             { v: "10+", l: "Technologies" },
             { v: "03", l: "Cisco Certs" },
             { v: "01", l: "In Progress" },
-          ].map((s, i) => (
+          ].map((s) => (
             <div
               key={s.l}
-              className={`py-8 px-4 border-hairline ${
-                i % 2 !== 0 ? "border-l" : ""
-              } ${i >= 2 ? "border-t sm:border-t-0" : ""} ${
-                i === 2 ? "sm:border-l" : ""
-              }`}
+              className="py-8 px-4 border-r border-b border-hairline"
             >
               <div className="font-serif text-5xl sm:text-6xl leading-none">{s.v}</div>
               <div className="label-mono mt-3">{s.l}</div>

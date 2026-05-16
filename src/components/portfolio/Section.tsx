@@ -36,7 +36,7 @@ export function Section({
     <section
       id={id}
       ref={ref}
-      className={`relative border-t border-hairline px-6 sm:px-10 lg:px-16 py-24 sm:py-32 ${className}`}
+      className={`relative border-t border-hairline px-6 sm:px-10 lg:px-16 py-20 sm:py-28 ${className}`}
     >
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-[160px_1fr] gap-6 md:gap-12 mb-16 reveal items-start">
