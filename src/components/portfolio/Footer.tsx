@@ -29,16 +29,7 @@ const socials = [
 export function Footer() {
   return (
     <>
-      <footer
-        className="relative border-t border-hairline pb-32"
-        style={{
-          backgroundImage:
-            "linear-gradient(rgba(5,5,16,0.92), rgba(5,5,16,0.92)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&q=80')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundAttachment: "fixed",
-        }}
-      >
+      <footer className="relative border-t border-hairline bg-background pb-32">
         {/* top accent glow */}
         <div className="pointer-events-none absolute inset-x-0 -top-px h-px bg-gradient-to-r from-transparent via-[var(--primary)] to-transparent opacity-60" />
         <div
