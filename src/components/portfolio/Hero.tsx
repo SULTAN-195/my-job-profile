@@ -33,10 +33,10 @@ export function Hero() {
 
             <div className="mt-12">
               <div className="label-mono mb-4">[ 002 / Get in Touch ]</div>
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-col sm:flex-row flex-wrap gap-3">
                 <a
                   href="#projects"
-                  className="group inline-flex items-center gap-3 bg-accent-yellow px-6 py-4 text-xs font-mono uppercase tracking-[0.18em]"
+                  className="group inline-flex items-center justify-center gap-3 bg-accent-yellow px-6 py-4 text-xs font-mono uppercase tracking-[0.18em] w-full sm:w-auto min-h-[44px]"
                 >
                   View Selected Work
                   <ArrowRight size={14} className="hover-arrow" />
@@ -44,7 +44,7 @@ export function Hero() {
                 <a
                   href="/Anas_CV.pdf"
                   download
-                  className="inline-flex items-center gap-3 border border-hairline px-6 py-4 text-xs font-mono uppercase tracking-[0.18em] hover:border-accent hover:text-accent transition-colors"
+                  className="inline-flex items-center justify-center gap-3 border border-hairline px-6 py-4 text-xs font-mono uppercase tracking-[0.18em] hover:border-accent hover:text-accent transition-colors w-full sm:w-auto min-h-[44px]"
                 >
                   <Download size={14} /> Download CV
                 </a>
