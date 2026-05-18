@@ -10,7 +10,7 @@ export function Hero() {
         <div className="grid lg:grid-cols-2 gap-0 lg:divide-x divide-y lg:divide-y-0 divide-[var(--border)]">
           <div className="lg:pr-12 pb-12 lg:pb-0">
             <div className="label-mono mb-8">[ Portfolio / 2026 ]</div>
-            <h1 className="font-serif text-6xl sm:text-7xl lg:text-[7.5rem] leading-[0.9] tracking-tight">
+            <h1 className="font-serif leading-[0.9] tracking-tight" style={{ fontSize: "clamp(3rem, 11vw, 7.5rem)" }}>
               Syed <br />
               Muhammad <br />
               <span className="italic">Anas<span className="accent">.</span></span>
@@ -33,10 +33,10 @@ export function Hero() {
 
             <div className="mt-12">
               <div className="label-mono mb-4">[ 002 / Get in Touch ]</div>
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-col sm:flex-row flex-wrap gap-3">
                 <a
                   href="#projects"
-                  className="group inline-flex items-center gap-3 bg-accent-yellow px-6 py-4 text-xs font-mono uppercase tracking-[0.18em]"
+                  className="group inline-flex items-center justify-center gap-3 bg-accent-yellow px-6 py-4 text-xs font-mono uppercase tracking-[0.18em] w-full sm:w-auto min-h-[44px]"
                 >
                   View Selected Work
                   <ArrowRight size={14} className="hover-arrow" />
@@ -44,7 +44,7 @@ export function Hero() {
                 <a
                   href="/Anas_CV.pdf"
                   download
-                  className="inline-flex items-center gap-3 border border-hairline px-6 py-4 text-xs font-mono uppercase tracking-[0.18em] hover:border-accent hover:text-accent transition-colors"
+                  className="inline-flex items-center justify-center gap-3 border border-hairline px-6 py-4 text-xs font-mono uppercase tracking-[0.18em] hover:border-accent hover:text-accent transition-colors w-full sm:w-auto min-h-[44px]"
                 >
                   <Download size={14} /> Download CV
                 </a>
@@ -63,9 +63,9 @@ export function Hero() {
           ].map((s) => (
             <div
               key={s.l}
-              className="py-8 px-4 border-r border-b border-hairline"
+              className="py-6 sm:py-8 px-4 border-r border-b border-hairline"
             >
-              <div className="font-serif text-5xl sm:text-6xl leading-none">{s.v}</div>
+              <div className="font-serif text-4xl sm:text-5xl lg:text-6xl leading-none">{s.v}</div>
               <div className="label-mono mt-3">{s.l}</div>
             </div>
           ))}

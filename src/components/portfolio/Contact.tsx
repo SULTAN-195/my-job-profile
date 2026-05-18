@@ -63,7 +63,7 @@ export function Contact() {
             <Field label="Message" name="message" textarea />
             <button
               type="submit"
-              className="group inline-flex items-center gap-3 bg-accent-yellow px-6 py-4 text-xs font-mono uppercase tracking-[0.18em]"
+              className="group inline-flex w-full sm:w-auto items-center justify-center gap-3 bg-accent-yellow px-6 py-4 text-xs font-mono uppercase tracking-[0.18em] min-h-[44px]"
             >
               Send Message
               <ArrowUpRight size={14} className="hover-arrow" />
