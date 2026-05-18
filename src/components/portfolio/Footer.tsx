@@ -150,7 +150,7 @@ export function Footer() {
 
           <div className="mt-16 border-t border-hairline" />
 
-          <div className="pt-6 flex flex-col md:flex-row items-center justify-between gap-3 text-[11px] font-mono uppercase tracking-[0.18em] text-foreground/60">
+          <div className="pt-6 flex flex-col md:flex-row items-center justify-between gap-3 text-[10px] sm:text-[11px] font-mono uppercase tracking-[0.18em] text-foreground/60 text-center">
             <span>© 2025 Ali Hassan. All rights reserved.</span>
             <span>Built with Next.js & Tailwind CSS</span>
             <span>Designed & Developed by Ali Hassan</span>
@@ -159,10 +159,10 @@ export function Footer() {
       </footer>
 
       <div className="fixed bottom-0 inset-x-0 z-40 border-t border-hairline bg-background/90 backdrop-blur-md">
-        <div className="max-w-7xl mx-auto px-6 sm:px-10 py-3 flex items-center justify-center gap-3 text-[11px] sm:text-xs font-mono uppercase tracking-[0.2em]">
-          <span className="h-2 w-2 rounded-full bg-accent pulse-dot" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-10 py-3 flex items-center justify-center gap-2 sm:gap-3 text-[10px] sm:text-xs font-mono uppercase tracking-[0.15em] sm:tracking-[0.2em]">
+          <span className="h-2 w-2 rounded-full bg-accent pulse-dot shrink-0" />
           <span className="accent">Open to Work</span>
-          <span className="text-foreground/80">— Available for Internship & Junior Roles</span>
+          <span className="hidden sm:inline text-foreground/80">— Available for Internship & Junior Roles</span>
         </div>
       </div>
     </>
