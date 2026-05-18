@@ -18,7 +18,7 @@ export function About() {
     <>
       <Section id="about" label="About / 01" heading="Passionate developer. Lifelong learner.">
         <div className="grid lg:grid-cols-[380px_1fr] gap-12 lg:gap-20">
-          <div>
+          <div className="mx-auto w-full max-w-xs sm:max-w-sm lg:max-w-none">
             <div className="aspect-[4/5] border border-hairline overflow-hidden">
               <img
                 src={headshot}
