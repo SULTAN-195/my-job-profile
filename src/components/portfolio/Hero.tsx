@@ -10,7 +10,7 @@ export function Hero() {
         <div className="grid lg:grid-cols-2 gap-0 lg:divide-x divide-y lg:divide-y-0 divide-[var(--border)]">
           <div className="lg:pr-12 pb-12 lg:pb-0">
             <div className="label-mono mb-8">[ Portfolio / 2026 ]</div>
-            <h1 className="font-serif text-6xl sm:text-7xl lg:text-[7.5rem] leading-[0.9] tracking-tight">
+            <h1 className="font-serif leading-[0.9] tracking-tight" style={{ fontSize: "clamp(3rem, 11vw, 7.5rem)" }}>
               Syed <br />
               Muhammad <br />
               <span className="italic">Anas<span className="accent">.</span></span>
