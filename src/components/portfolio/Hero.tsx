@@ -63,9 +63,9 @@ export function Hero() {
           ].map((s) => (
             <div
               key={s.l}
-              className="py-8 px-4 border-r border-b border-hairline"
+              className="py-6 sm:py-8 px-4 border-r border-b border-hairline"
             >
-              <div className="font-serif text-5xl sm:text-6xl leading-none">{s.v}</div>
+              <div className="font-serif text-4xl sm:text-5xl lg:text-6xl leading-none">{s.v}</div>
               <div className="label-mono mt-3">{s.l}</div>
             </div>
           ))}
