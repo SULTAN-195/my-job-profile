@@ -158,26 +158,12 @@ export function Footer() {
         </div>
       </footer>
 
-      <div className="fixed bottom-4 sm:bottom-6 inset-x-0 z-40 px-4 flex justify-center pointer-events-none">
-        <a
-          href="#contact"
-          className="pointer-events-auto group inline-flex items-center gap-2 sm:gap-3 border border-[var(--primary)]/40 bg-background/80 backdrop-blur-xl pl-3 pr-2 sm:pl-4 sm:pr-3 py-2 sm:py-2.5 shadow-[0_10px_40px_-10px_var(--primary)] hover:border-[var(--primary)] hover:shadow-[0_10px_50px_-5px_var(--primary)] transition-all"
-        >
-          <span className="relative flex h-2 w-2 shrink-0">
-            <span className="absolute inset-0 rounded-full bg-[var(--primary)] opacity-60 animate-ping" />
-            <span className="relative h-2 w-2 rounded-full bg-[var(--primary)]" />
-          </span>
-          <span className="font-mono text-[10px] sm:text-xs uppercase tracking-[0.18em] sm:tracking-[0.22em] accent">
-            Open to Work
-          </span>
-          <span className="hidden sm:inline h-3 w-px bg-[var(--border)]" />
-          <span className="hidden sm:inline font-mono text-[11px] uppercase tracking-[0.18em] text-foreground/70">
-            Internship & Junior Roles
-          </span>
-          <span className="ml-1 inline-flex items-center justify-center h-6 w-6 sm:h-7 sm:w-7 bg-[var(--primary)] text-[var(--primary-foreground)] transition-transform group-hover:translate-x-0.5">
-            <ArrowUpRight size={14} />
-          </span>
-        </a>
+      <div className="fixed bottom-0 inset-x-0 z-40 border-t border-hairline bg-background/90 backdrop-blur-md">
+        <div className="max-w-7xl mx-auto px-4 sm:px-10 py-3 flex items-center justify-center gap-2 sm:gap-3 text-[10px] sm:text-xs font-mono uppercase tracking-[0.15em] sm:tracking-[0.2em]">
+          <span className="h-2 w-2 rounded-full bg-accent pulse-dot shrink-0" />
+          <span className="accent">Open to Work</span>
+          <span className="hidden sm:inline text-foreground/80">— Available for Internship & Junior Roles</span>
+        </div>
       </div>
     </>
   );
